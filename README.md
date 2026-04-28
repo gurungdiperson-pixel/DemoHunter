@@ -1,6 +1,6 @@
 # Demogorgon Hunter
 
-A Stranger Things-inspired top-down survival shooter built with Python and Pygame.
+A Demogorgon-slaying survival shooter inspired by Stranger Things.
 
 ## Features
 - 4-wave progression system
@@ -19,26 +19,27 @@ A Stranger Things-inspired top-down survival shooter built with Python and Pygam
 ## How to Run
 Run:
 
+Make Sure Python and Pygame are installed
 python dist/main.py
 
 ## File Structure
 
 ```
 / (Root)
-├── README.md           # Project documentation (this file)
-├── DEMO.mp4            # Gameplay demo video (under 30 seconds)
-├── src/                # Development environment — raw, in-progress code (may have bugs, minimal comments)
-│   ├── main.py         # Main game file (game loop, wave logic, player, enemies, bullets, UI)
-│   ├── upside_down_bg.py  # Procedurally generated Upside Down background (vines, ground, atmosphere)
+├── README.md           # Project documentation
+├── DEMO.mp4            # Short gameplay demo video (under 30 seconds)
+├── src/                # Development version of the project (work-in-progress code, may contain bugs, minimal comments)
+│   ├── main.py         # Core game logic (game loop, waves, player, enemies, bullets, UI)
+│   ├── upside_down_bg.py  # Procedural Upside Down background generator (vines, terrain, atmosphere effects)
 │   └── assets/
-│       ├── sounds/     # All sound effects and music used in the game
-│       └── sprites/    # All sprite images used in the game
-└── dist/               # Production version — stable, fully commented and documented code (this is what gets graded)
-    ├── main.py         # Stable version of the main game file
-    ├── upside_down_bg.py  # Stable version of the background module
+│       ├── sounds/     # All audio files used in the game
+│       └── sprites/    # All image assets used in the game
+└── dist/               # Final production version (clean, stable, fully documented code used for submission/marking)
+    ├── main.py         # Final version of the main game file
+    ├── upside_down_bg.py  # Final background system module
     └── assets/
-        ├── sounds/     # Verified copies of all sounds
-        └── sprites/    # Verified copies of all sprites
+        ├── sounds/     # Verified and cleaned audio assets
+        └── sprites/    # Verified and cleaned image assets
 ```
 
 ## OOP Breakdown
@@ -47,12 +48,12 @@ The game is structured around several classes defined in `main.py` and `upside_d
 
 | Class | Description |
 |---|---|
-| `Player` | Represents the player character. Handles movement (WASD), gun rotation toward the mouse, shooting, health, and power-up application. |
-| `Enemy` | Represents a standard Demogorgon enemy. Handles pathfinding toward the player, health, damage, and health bar rendering. |
-| `Boss` | Extends enemy behavior for the final wave. Includes a laser attack mechanic and increased aggression/health scaling. |
-| `Bullet` | Represents a projectile fired by the player. Handles directional movement based on mouse-aim angle math. |
-| `PowerUp` | Represents a dropped power-up (health, damage boost, or speed boost). Handles drop logic and collision with the player. |
-| `UpsideDownBackground` | Manages the procedurally generated background — draws vines, ground, and atmospheric overlays that always fit the screen. |
+| `Player` | Controls the player character. Manages movement (WASD), aiming and rotating the weapon toward the mouse, shooting mechanics, health system, and applying power-up effects. |
+| `Enemy` | Represents regular Demogorgon enemies. Handles movement toward the player, health management, damage handling, and rendering of health bars. |
+| `Boss` | An advanced version of the enemy used in the final wave. Features a laser attack system along with higher health and increased difficulty. |
+| `Bullet` | Represents projectiles fired by the player. Moves based on angle calculations derived from mouse aiming. |
+| `PowerUp` | Handles collectible boosts such as health, speed, and damage increases, including spawn logic and player collision detection. |
+| `UpsideDownBackground` | Generates and manages the procedural background, including vines, terrain, and atmospheric effects that scale to the screen size. |
 
 ## Assets & Sources
 
@@ -113,4 +114,4 @@ Whenever I was stuck — whether it was enemy pathfinding, bullets disappearing 
 AI repeatedly gave me incorrect or overcomplicated solutions for flipping the gun sprite depending on which side of the player the mouse was on. I ended up solving this one myself by working through the logic manually.
 
 **Git and GitHub**
-AI was not helpful here either. Getting my repository set up, understanding what `get_asset_path()` was doing, renaming files correctly, and finally pushing everything — none of that came from AI. A senior CS major at my university walked me through it in person, and that's what actually got it working.
+AI was not helpful here either. Getting my repository set up, understanding what `get_asset_path()` was doing, renaming files correctly, and finally pushing everything — none of that came from AI.
