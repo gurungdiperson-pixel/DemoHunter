@@ -1,3 +1,10 @@
+<p align="center">
+  <img src="dist/assets/sprites/preview.gif" width="600"/>
+</p>
+
+# 🎮 DemoHunter
+A Stranger Things-inspired top-down survival shooter built with Python and Pygame.
+
 # Demogorgon Hunter
 
 A Demogorgon-slaying survival shooter inspired by Stranger Things.
